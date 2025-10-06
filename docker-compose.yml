@@ -1,0 +1,22 @@
+
+version: '3.3'
+
+services:
+  redirect_ftp:
+    build: . 
+    tty: true
+    stdin_open: true
+    network_mode: host
+    volumes:
+      - .:/redirectFTP
+      - node_modules:/redirectFTP/node_modules
+      
+    environment:
+      - NODE_ENV=development
+      
+    command: tail -f /dev/null
+    
+volumes:
+  node_modules:
+  
+
