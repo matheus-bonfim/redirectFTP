@@ -11,9 +11,7 @@ RUN npm install
 # Copia o restante dos arquivos do projeto
 COPY . .
 
-# Expõe as portas que seu app vai usar
-EXPOSE 5000
 EXPOSE 2121
 
-
+CMD ["node", "./code/server.js"]
 
