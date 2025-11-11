@@ -14,7 +14,7 @@ export const connDBConfig =  {
 
 export const clientFTPConfig = {
             host: "189.4.2.61",
-            port: 2120,
+            port: 2125,
             user: "admin",
             password: "wni",
             secure: false // true se usar FTPS

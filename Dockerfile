@@ -2,7 +2,7 @@
 FROM node:22.14
 
 # Cria e define o diretório de trabalho dentro do container
-WORKDIR /redirectftp
+WORKDIR /redirectFTP
 
 # Copia os arquivos de dependência e instala
 COPY package*.json ./
