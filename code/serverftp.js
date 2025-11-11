@@ -24,7 +24,7 @@ const logger2 = bunyan.createLogger({
 
 export class CreateServerFTP{
 
-    constructor(prf, pm, log){
+    constructor(log){
         this.isFTPlogOn = false;
         this.logger = logger1;
         if(log === 0) {
@@ -48,8 +48,7 @@ export class CreateServerFTP{
             pasv_min: pasv_min,
             pasv_max: pasv_max
         });
-        this.prf = prf;
-        this.pm = pm;
+        
         this.log = log;
         this.img_ftp = imgFTP_path;
         
@@ -100,7 +99,7 @@ export class CreateServerFTP{
                     console.log("\n Novo arquivo recebido:" ,fileName);    
                 }
                 if (typeof fileName !== 'string' || !fileName){
-                    console.erro("Caminho invalido recebido");
+                    console.error("Caminho invalido recebido");
                     return; 
                 }
                 sendfileFTP(fileName)
@@ -124,8 +123,7 @@ export class CreateServerFTP{
         }, 3000)
 
     };
-
-    
+  
     listen(){
         this.ftpServer.listen().then(() => {
             console.log(`\n Servidor FTP rodando`);
@@ -137,8 +135,6 @@ export class CreateServerFTP{
     close(){
         this.ftpServer.close()
     }
-
-    
 }
 
 export default CreateServerFTP;
